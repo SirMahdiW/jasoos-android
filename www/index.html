@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="theme-color" content="#09090e">
+<title>جاسوس</title>
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="جاسوس">
+<meta name="application-name" content="جاسوس">
+<meta name="msapplication-TileColor" content="#09090e">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMTIiIGZpbGw9IiMwOTA5MGUiLz4KPHJlY3QgeD0iNDIiIHk9IjQyIiB3aWR0aD0iNDI4IiBoZWlnaHQ9IjQyOCIgcng9IjEwNCIgZmlsbD0iIzE3MTcyMiIgc3Ryb2tlPSIjZmZkMjNmIiBzdHJva2Utd2lkdGg9IjEyIi8+CjxjaXJjbGUgY3g9IjIyMCIgY3k9IjIxMCIgcj0iMTAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmQyM2YiIHN0cm9rZS13aWR0aD0iMjgiLz4KPHBhdGggZD0iTTI5MiAyODJMMzkwIDM4MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZkMjNmIiBzdHJva2Utd2lkdGg9IjI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+" type="image/svg+xml">
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#09090e;--card:#171722;--in:#0e0e15;--tx:#f4f4fa;--mut:#8f8fa8;--y:#ffd23f;--p:#ff5d8f;--c:#3ec9ff;--v:#8b5cf6;--g:#37d67a;--ink:#12121a;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Vazirmatn,Tahoma,sans-serif;min-height:100vh;display:flex;justify-content:center;line-height:1.7;overscroll-behavior:none}
+button{font-family:inherit;border:0;cursor:pointer;color:inherit}
+#app{width:100%;max-width:480px;padding:20px 16px 28px;display:flex;flex-direction:column;gap:14px;min-height:100vh;animation:in .3s ease both}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.cl{background:var(--card);border-radius:30px;box-shadow:9px 9px 20px rgba(0,0,0,.65),-6px -6px 14px rgba(255,255,255,.04),inset 3px 3px 6px rgba(255,255,255,.1),inset -5px -5px 10px rgba(0,0,0,.35)}
+.in{background:var(--in);border-radius:22px;box-shadow:inset 4px 4px 9px rgba(0,0,0,.65),inset -3px -3px 7px rgba(255,255,255,.04)}
+.y{background:var(--y)}.p{background:var(--p)}.c{background:var(--c)}.v{background:var(--v);color:#fff}.g{background:var(--g)}
+.blk{width:46px;height:46px;border-radius:16px;display:grid;place-items:center;flex:none;color:var(--ink);box-shadow:inset 3px 3px 5px rgba(255,255,255,.45),inset -3px -3px 6px rgba(0,0,0,.22),4px 4px 9px rgba(0,0,0,.5)}
+.v.blk{color:#fff}
+.brand{display:flex;align-items:center;gap:14px}
+.brand .blk{width:58px;height:58px;border-radius:20px}
+.brand h1{margin:0;font-size:30px;font-weight:900;line-height:1.2}
+.brand p{margin:0;color:var(--mut);font-size:13px}
+.lab{color:var(--mut);font-size:13px;font-weight:700;margin:6px 6px -4px}
+.card{padding:6px 16px}
+.row{display:flex;align-items:center;gap:12px;padding:13px 0}
+.row+.row{border-top:1px solid rgba(255,255,255,.06)}
+.row .t{flex:1;line-height:1.35}
+.row .t b{display:block;font-size:16px;font-weight:900}
+.row .t small{color:var(--mut);font-size:12px}
+.stp{display:flex;align-items:center;gap:6px;padding:5px}
+.stp button{width:44px;height:44px;border-radius:15px;font-size:24px;font-weight:900;color:var(--ink);box-shadow:inset 3px 3px 5px rgba(255,255,255,.5),inset -3px -3px 6px rgba(0,0,0,.22),4px 4px 8px rgba(0,0,0,.5)}
+.stp button:active,.btn:active{transform:scale(.95)}
+.stp span{min-width:66px;text-align:center;font-size:22px;font-weight:900;line-height:1.1}
+.stp small{display:block;font-size:10px;color:var(--mut);font-weight:700}
+.q{width:30px;height:30px;border-radius:11px;font-weight:900;color:var(--ink);background:var(--c);box-shadow:inset 2px 2px 4px rgba(255,255,255,.5),inset -2px -2px 4px rgba(0,0,0,.2),3px 3px 6px rgba(0,0,0,.5)}
+.sw{position:relative;width:64px;height:36px;border-radius:18px;flex:none}
+.sw::after{content:"";position:absolute;top:5px;inset-inline-start:5px;width:26px;height:26px;border-radius:50%;background:var(--mut);transition:.2s;box-shadow:2px 2px 5px rgba(0,0,0,.6)}
+.sw.on::after{inset-inline-start:33px;background:var(--g)}
+.note{padding:12px 16px;color:var(--mut);font-size:14px;text-align:center}
+.note b{color:var(--tx)}
+.sp{flex:1}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:17px;border-radius:26px;font-size:18px;font-weight:900;color:var(--ink);box-shadow:inset 4px 4px 8px rgba(255,255,255,.45),inset -5px -5px 10px rgba(0,0,0,.22),8px 8px 16px rgba(0,0,0,.6)}
+.btn.v{color:#fff}
+.ph .meta{display:flex;justify-content:space-between;color:var(--mut);font-size:13px;font-weight:700;margin-bottom:8px}
+.ph .meta b{color:var(--tx)}
+.bar{height:14px;border-radius:7px;overflow:hidden;padding:3px}
+.bar i{display:block;height:100%;border-radius:4px;background:var(--y);transition:width .3s}
+.stage{text-align:center;padding:30px 20px;margin-top:10px}
+.disc{width:130px;height:130px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;color:var(--v)}
+.disc.sm{width:92px;height:92px;margin-bottom:6px}
+.pill{display:inline-block;padding:4px 16px;border-radius:14px;color:var(--ink);font-weight:900;font-size:14px}
+h2{font-size:25px;font-weight:900;margin:12px 0 4px}
+.stage p{color:var(--mut);margin:0;font-size:14px}
+.k{color:var(--mut);font-size:13px;font-weight:700;margin:14px 0 6px}
+.box{padding:16px 10px;font-size:38px;font-weight:900;line-height:1.3;min-height:84px;display:grid;place-items:center}
+.dial{position:relative;width:260px;height:260px;margin:12px auto 6px;border-radius:50%}
+.dial svg{position:absolute;inset:8px;width:calc(100% - 16px);height:calc(100% - 16px);transform:rotate(-90deg)}
+.dial .tm{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.dial b{font-size:56px;font-weight:900;font-variant-numeric:tabular-nums;line-height:1.1}
+.dial small{color:var(--mut);font-size:12px}
+.st{text-align:center;font-weight:900;margin:6px 0 0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stats div{padding:14px 6px;text-align:center;color:var(--ink);border-radius:24px;box-shadow:inset 3px 3px 6px rgba(255,255,255,.45),inset -4px -4px 8px rgba(0,0,0,.22),6px 6px 12px rgba(0,0,0,.55)}
+.stats b{display:block;font-size:28px;font-weight:900;line-height:1.2}.stats small{font-size:12px;font-weight:700}
+.li{display:flex;align-items:center;gap:12px;padding:10px 14px;margin-bottom:10px;border-radius:22px}
+.li .t{flex:1;line-height:1.3}.li small{color:var(--mut);font-size:12px}
+.tag{padding:3px 12px;border-radius:12px;font-weight:900;font-size:13px;color:var(--ink)}
+.md{position:fixed;inset:0;background:rgba(0,0,0,.7);display:flex;align-items:flex-end;justify-content:center;z-index:9}
+.md>div{width:100%;max-width:480px;padding:24px 20px calc(24px + env(safe-area-inset-bottom,0px));border-radius:34px 34px 0 0;line-height:1.9;animation:in .25s both}
+.md h3{margin:0 0 6px;font-size:22px;font-weight:900}.md p{color:var(--mut);margin:0 0 6px}
+</style>
+<!-- Single-file edition: no external PWA files required. -->\n</head>
+<body>
+<div id="app"></div>
+<script>
+const WB={
+  "غذا": ["پیتزا","ساندویچ","آش","قرمه‌سبزی","زرشک‌پلو","کباب","برگر","ماکارونی","سوپ","سالاد","کیک","بستنی","شیرینی","دونات","پنیر","تخم‌مرغ","ماست","نان","برنج","مرغ","آبگوشت","کشک بادمجون","میرزاقاسمی","شله‌زرد","حلیم","عدسی","کتلت","شامی","سوشی","لازانیا","پاپ‌کورن","چیپس","شکلات","پودینگ","کوکی","فالافل","هوموس","پاستا"],
+  "مکان": ["پارک","بیمارستان","مدرسه","کتابخانه","رستوران","فرودگاه","ایستگاه مترو","سینما","موزه","بازار","مسجد","هتل","استخر","ساحل","شهربازی","کوهستان","غار","آتشفشان","برج","پل","تونل","زمین فوتبال","کارخانه","دفتر کار","آشپزخانه","اتاق خواب","حمام","گاراژ","پمپ بنزین","کافه","نانوایی","داروخانه","فروشگاه","ورزشگاه","زندان","کلیسای جامع"],
+  "حیوان": ["شیر","پلنگ","یوزپلنگ","خرس","گرگ","روباه","خرگوش","گربه","سگ","اسب","الاغ","گاو","گوسفند","بز","مرغابی","خروس","اردک","قو","پنگوئن","فیل","زرافه","میمون","خوک","موش","سنجاب","خارپشت","لاک‌پشت","مار","عقرب","سوسک","زنبور","پروانه","آهو","کرگدن","شتر","بوفالو","دلفین","کوسه","ماهی","قورباغه","عنکبوت","فلامینگو","طوطی","عقاب","جغد","خفاش","تمساح","گاومیش"],
+  "شغل": ["دکتر","پرستار","معلم","مهندس","وکیل","قاضی","پلیس","آتش‌نشان","راننده","خلبان","مهماندار","آشپز","نانوا","قصاب","بقال","خیاط","کفاش","نجار","نقاش","عکاس","روزنامه‌نگار","خواننده","بازیگر","ورزشکار","کشاورز","دامپزشک","دندان‌پزشک","داروساز","حسابدار","فروشنده","منشی","برنامه‌نویس","طراح گرافیک","مترجم","راهنمای تور","ملوان","نگهبان","نظافتچی","گزارشگر","مجری","آرایشگر","صحاف"],
+  "وسایل": ["گوشی","لپ‌تاپ","تلویزیون","یخچال","ماشین لباسشویی","جاروبرقی","اتو","کولر","بخاری","آسانسور","چراغ قوه","عینک","ساعت","کیف","چتر","چاقو","قاشق","چنگال","لیوان","بشقاب","قابلمه","تابه","همزن","میکروفر","کتری","سوزن","دکمه","کلید","قفل","چکش","میخ","پیچ‌گوشتی","نردبان","طناب","کوله‌پشتی","دوربین","هدفون","بلندگو","شارژر","پاوربانک","ریموت","تبلت","پرینتر","ماوس","کیبورد","دم‌بازو","سنجاق"],
+  "ورزش": ["فوتبال","بسکتبال","والیبال","تنیس","بدمینتون","شنا","دوومیدانی","وزنه‌برداری","کشتی","بوکس","تکواندو","جودو","کاراته","شمشیربازی","دوچرخه‌سواری","اسکی","اسکیت‌برد","موج‌سواری","قایقرانی","گلف","بیلیارد","شطرنج","دارت","پینگ‌پنگ","فوتبال دستی","یوگا","پیلاتس","ژیمناستیک","اسکیت روی یخ","هاکی","راگبی","فوتسال","ماراتن","کوهنوردی","غواصی"],
+  "مناسبت": ["نوروز","شب یلدا","عید فطر","عید قربان","عید غدیر","میلاد پیامبر","ولنتاین","کریسمس","هالووین","تولد","عروسی","جشن فارغ‌التحصیلی","سال نو","جشنواره فیلم","المپیک","جام جهانی","روز پدر","روز مادر","روز معلم","روز زمین","روز درختکاری","محرم","ماه رمضان","سفره هفت‌سین","جشن تکلیف","میهمانی صبحانه"],
+  "موسیقی": ["گیتار","پیانو","ویولن","دف","تار","سه‌تار","سنتور","نی","فلوت","کلارینت","ترامپت","درام","پرکاشن","هارپ","ارگ","ضبط صوت","آهنگ","کنسرت","ارکستر","رپ","ساز دهنی","کاست","گرامافون","سی دی","بلندگوی قدرتی"],
+  "طبیعت": ["درخت","گل","علف","کوه","رودخانه","دریا","اقیانوس","جنگل","بیابان","آبشار","چشمه","دریاچه","جزیره","یخچال طبیعی","برف","باران","ابر","رعد و برق","طوفان","مه","خورشید","ماه","ستاره","سیاره","دنباله‌دار","رنگین‌کمان","شن","سنگ","خاک","برگ خشک"],
+  "وسایل نقلیه": ["ماشین","اتوبوس","مینی‌بوس","تاکسی","مترو","قطار","هواپیما","هلیکوپتر","کشتی بادبانی","قایق","دوچرخه","موتورسیکلت","اسکوتر","نیسان","کامیون","تریلی","آمبولانس","خودروی آتش‌نشانی","پله برقی","تله‌کابین","چتر نجات","کالسکه"],
+  "اشیای روزمره": ["مسواک","خمیر دندان","حوله","صابون","شامپو","آینه","شانه","برس","رخت‌آویز","چراغ خواب","پتو","بالش","ملحفه","فرش","پرده","جارو","سطل زباله","تی‌شرت","جوراب","کلاه","کمربند","کفش","دمپایی","کیف پول","سکه","کارت بانکی","رسید","دفتر","مداد","خودکار","پاک‌کن","خط‌کش","فندک","کبریت","عطر","رژ لب","عروسک","توپ"],
+  "فناوری": ["رایانه","اینترنت","بلوتوث","واقعیت مجازی","ربات","مدار چاپی","باتری","پردازنده","صفحه نمایش","دوربین گوشی","اپلیکیشن","شبکه اجتماعی","پیام‌رسان","هوش مصنوعی","ماشین حساب","فلاش‌مموری"]
+};
+const ALL=Object.values(WB).flat();
+const $=s=>document.querySelector(s),A=$('#app');
+const fa=v=>String(v).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
+/* آیکون‌ها: Lucide (lucide.dev) */
+const P={users:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+search:'<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+clock:'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+star:'<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+smile:'<circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/>',
+lock:'<rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
+eye:'<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>',
+eyeoff:'<path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/>',
+play:'<polygon points="6 3 20 12 6 21 6 3"/>',pause:'<rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/>',
+next:'<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',redo:'<path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>'};
+const ic=(n,z=22)=>`<svg width="${z}" height="${z}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${P[n]}</svg>`;
+let S={n:5,s:1,m:3,sh:0,jk:0},bag=[],R=[],i=0,w='',tm=null,view='';
+const INFO={sh:['کلانتر','star','g','کلانتر یار شهروندان است و در تیم شهروندان حساب می‌شود. کلمه را می‌داند و مثل شهروندان بازی می‌کند، با این تفاوت که اگر در طول بازی جاسوس را شناسایی کند، خودش را اعلام می‌کند و بدون رأی‌گیری یک یا چند جاسوس را نشانه می‌گیرد. اما اگر اشتباه کند، بازی به نفع جاسوسان تمام می‌شود.'],
+jk:['جوکر','smile','v','جوکر جزو تیم جاسوسان و از بازیکنان شرور بازی است. کلمه اصلی را می‌داند اما نمی‌داند جاسوس‌ها چه کسانی هستند. وظیفه‌اش گمراه کردن شهروندان به سمت خودش است. اگر جوکر به جای جاسوس از بازی خارج شود، شهروندان (همه کسانی که جاسوس نیستند) بازی را می‌بازند.']};
+function word(){if(!bag.length){bag=ALL.slice();for(let k=bag.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[bag[k],bag[j]]=[bag[j],bag[k]]}}return bag.pop()}
+function clamp(){const e=S.sh+S.jk;if(S.n<3)S.n=3;if(S.n<e+2)S.n=e+2;const mx=Math.max(1,S.n-1-e);S.s=Math.min(Math.max(S.s,1),mx);if(S.m<1)S.m=1}
+function ch(k,d){S[k]+=d;setup()}
+function tg(k){S[k]=S[k]?0:1;setup()}
+function sheet(k){const d=document.createElement('div'),I=INFO[k];d.className='md';d.onclick=e=>{if(e.target===d||e.target.closest('.btn'))d.remove()};d.innerHTML=`<div class="cl"><div class="row" style="padding-top:0"><span class="blk ${I[2]}">${ic(I[1])}</span><h3>${I[0]}</h3></div><p>${I[3]}</p><button class="btn y" style="margin-top:14px">متوجه شدم</button></div>`;document.body.appendChild(d)}
+function stp(k,v,u){return `<div class="stp in"><button class="p" onclick="ch('${k}',-1)">−</button><span>${fa(v)}${u?`<small>${u}</small>`:''}</span><button class="y" onclick="ch('${k}',1)">+</button></div>`}
+function row(c,ico,t,s,r){return `<div class="row"><span class="blk ${c}">${ic(ico)}</span><span class="t"><b>${t}</b><small>${s}</small></span>${r}</div>`}
+function rrow(k,c,ico,t,s){return row(c,ico,t,s,`<button class="q" onclick="sheet('${k}')">؟</button><button class="sw in ${S[k]?'on':''}" onclick="tg('${k}')" aria-label="${t}"></button>`)}
+function setup(){clamp();view='setup';clearInterval(tm);const sp=S.s,ex=S.sh+S.jk,ci=S.n-sp-ex;
+A.innerHTML=`<div class="brand"><span class="blk y">${ic('search',30)}</span><div><h1>جاسوس</h1><p>بازی دورهمی · یک گوشی بین همه</p></div></div>
+<div class="lab">تنظیمات بازی</div>
+<div class="card cl">${row('c','users','بازیکنان','حداقل ۳ نفر',stp('n',S.n))}${row('p','search','جاسوس‌ها','بدون سقف ثابت',stp('s',S.s))}${row('y','clock','زمان بازی','از ۱ دقیقه، بدون سقف',stp('m',S.m,'دقیقه'))}</div>
+<div class="lab">نقش‌های ویژه</div>
+<div class="card cl">${rrow('sh','g','star','کلانتر','یار شهروندان')}${rrow('jk','v','smile','جوکر','همراه جاسوسان')}</div>
+<div class="note in">${fa(S.n)} بازیکن: <b>${fa(sp)}</b> جاسوس${ex?` و <b>${fa(ex)}</b> نقش ویژه`:''} و <b>${fa(ci)}</b> شهروند</div>
+<div class="sp"></div><button class="btn g" onclick="start()">${ic('play',20)} شروع بازی</button>`}
+function start(){w=word();const ids=[...Array(S.n).keys()];for(let k=ids.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[ids[k],ids[j]]=[ids[j],ids[k]]}
+R=Array(S.n).fill('cit');let p=0;for(let k=0;k<S.s;k++)R[ids[p++]]='spy';if(S.sh)R[ids[p++]]='sh';if(S.jk)R[ids[p++]]='jk';i=0;ready()}
+function ready(){view='ready';A.innerHTML=`<div class="ph"><div class="meta"><span>پاس دادن گوشی</span><b>${fa(i+1)} از ${fa(S.n)}</b></div><div class="bar in"><i style="width:${(i+1)/S.n*100}%"></i></div></div>
+<div class="stage cl"><div class="disc in">${ic('lock',56)}</div><span class="pill c">نوبت بازیکن ${fa(i+1)}</span><h2>گوشی را به این بازیکن بده</h2><p>فقط خودش دکمه را بزند و نقشش را ببیند؛ بقیه به صفحه نگاه نکنند.</p></div>
+<div class="sp"></div><button class="btn v" onclick="showRole()">${ic('eye',21)} نمایش نقش</button>`}
+const T={cit:['شهروند','از تیم شهروندان'],sh:['کلانتر','از تیم شهروندان'],jk:['جوکر','از تیم جاسوسان'],spy:['جاسوس','کلمه را نمی‌دانی']};
+function showRole(){view='role';const r=R[i];A.innerHTML=`<div class="stage cl"><div class="disc sm in">${ic('eye',40)}</div><div class="k">نقش بازیکن ${fa(i+1)}</div><div class="box in">${T[r][0]}</div><div class="k">کلمه مخفی</div><div class="box in">${r==='spy'?'؟؟؟':w}</div><p style="margin-top:14px">${T[r][1]}</p></div>
+<div class="sp"></div><button class="btn p" onclick="nextP()">${ic('eyeoff',21)} فهمیدم، مخفی کن</button>`}
+function nextP(){i++;i<S.n?ready():game()}
+const C=2*Math.PI*104;
+function game(){view='game';let total=S.m*60,left=total,run=true,end=Date.now()+left*1000;
+A.innerHTML=`<div class="dial cl"><svg viewBox="0 0 240 240"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd23f"/><stop offset="1" stop-color="#ff5d8f"/></linearGradient></defs><circle cx="120" cy="120" r="104" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="16"/><circle id="rg" cx="120" cy="120" r="104" fill="none" stroke="url(#g)" stroke-width="16" stroke-linecap="round" stroke-dasharray="${C}"/></svg><div class="tm"><b id="tt"></b><small>دقیقه : ثانیه</small></div></div>
+<div class="st" id="st">زمان در جریان است</div><p style="text-align:center;color:var(--mut);margin:0">گوشی را وسط بگذارید و با هم گفت‌وگو کنید.</p><div class="sp"></div>
+<button class="btn c" id="pb">${ic('pause',20)} توقف زمان</button><button class="btn p" onclick="fin()">پایان و نمایش نقش‌ها ${ic('next',20)}</button>`;
+const pd=n=>fa(String(n).padStart(2,'0'));
+function paint(){$('#tt').textContent=pd(Math.floor(left/60))+':'+pd(left%60);$('#rg').style.strokeDashoffset=C*(1-left/total)}
+paint();clearInterval(tm);tm=setInterval(()=>{if(!run)return;left=Math.max(0,Math.ceil((end-Date.now())/1000));paint();if(left<=0){clearInterval(tm);$('#st').textContent='زمان تمام شد!';$('#st').style.color='var(--p)';try{navigator.vibrate&&navigator.vibrate([400,200,400])}catch(e){}}},250);
+$('#pb').onclick=function(){run=!run;if(run)end=Date.now()+left*1000;this.innerHTML=(run?ic('pause',20)+' توقف زمان':ic('play',20)+' ادامه زمان');$('#st').textContent=run?'زمان در جریان است':'زمان متوقف شد'}}
+function fin(){view='end';clearInterval(tm);const sp=R.filter(r=>r==='spy'||r==='jk').length;
+const L=R.map((r,k)=>{const s=r==='spy'||r==='jk';return `<div class="li cl"><span class="blk ${s?'p':'g'}" style="width:40px;height:40px;border-radius:14px;font-weight:900">${fa(k+1)}</span><span class="t"><b>بازیکن ${fa(k+1)}</b><br><small>${s?'تیم جاسوسان':'تیم شهروندان'}</small></span><span class="tag ${s?'p':'g'}">${T[r][0]}</span></div>`}).join('');
+A.innerHTML=`<div class="stage cl" style="margin-top:0;padding:20px"><div class="k" style="margin-top:0">کلمه این دور</div><div class="box in" style="color:var(--y)">${w}</div></div>
+<div class="stats"><div class="c"><b>${fa(R.length)}</b><small>بازیکن</small></div><div class="p"><b>${fa(sp)}</b><small>تیم جاسوسان</small></div><div class="g"><b>${fa(R.length-sp)}</b><small>تیم شهروندان</small></div></div>
+<div class="lab">نقش همه بازیکنان</div>${L}<button class="btn g" onclick="start()">${ic('redo',20)} دور جدید با همین تنظیمات</button><button class="btn y" onclick="setup()">بازگشت به تنظیمات</button>`}
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&view==='role')ready()});
+setup();
+</script>
+</body>
+</html>

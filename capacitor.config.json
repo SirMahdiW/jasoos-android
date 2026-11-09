@@ -1,0 +1,6 @@
+{
+  "appId": "com.sirmahdi.jasoos",
+  "appName": "جاسوس",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
