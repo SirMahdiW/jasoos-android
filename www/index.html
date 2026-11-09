@@ -79,8 +79,105 @@ h2{font-size:25px;font-weight:900;margin:12px 0 4px}
 .md{position:fixed;inset:0;background:rgba(0,0,0,.7);display:flex;align-items:flex-end;justify-content:center;z-index:9}
 .md>div{width:100%;max-width:480px;padding:24px 20px calc(24px + env(safe-area-inset-bottom,0px));border-radius:34px 34px 0 0;line-height:1.9;animation:in .25s both}
 .md h3{margin:0 0 6px;font-size:22px;font-weight:900}.md p{color:var(--mut);margin:0 0 6px}
+
+/* Android WebView: fit the game to the device viewport */
+html, body {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+}
+body {
+  height: 100dvh;
+  min-height: 0;
+  position: fixed;
+  inset: 0;
+  overscroll-behavior: none;
+}
+#app {
+  width: 100%;
+  height: 100dvh;
+  min-height: 0;
+  max-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  padding:
+    max(10px, env(safe-area-inset-top, 0px))
+    14px
+    max(10px, env(safe-area-inset-bottom, 0px));
+  gap: clamp(8px, 1.5dvh, 14px);
+}
+/* Keep normal game screens fixed; only the final player list may scroll. */
+#app:not(:has(.stats)) { overflow-y: hidden; }
+#app:has(.stats) { overflow-y: auto; }
+.brand { gap: 10px; flex: none; }
+.brand .blk { width: 48px; height: 48px; border-radius: 16px; }
+.brand h1 { font-size: clamp(23px, 6vw, 28px); }
+.brand p { font-size: 12px; }
+.lab { margin: 2px 6px -3px; font-size: 12px; }
+.card { padding: 4px 12px; }
+.row { gap: 9px; padding: 9px 0; }
+.row .t b { font-size: 15px; }
+.row .t small { font-size: 11px; }
+.blk { width: 40px; height: 40px; border-radius: 13px; }
+.stp button { width: 38px; height: 38px; border-radius: 13px; }
+.stp span { min-width: 48px; font-size: 20px; }
+.stp { gap: 4px; padding: 3px; }
+.sw { width: 54px; height: 32px; }
+.sw::after { width: 22px; height: 22px; top: 5px; }
+.sw.on::after { inset-inline-start: 27px; }
+.note { padding: 8px 12px; font-size: 12px; }
+.btn { padding: clamp(12px, 2.1dvh, 16px); border-radius: 21px; font-size: 16px; flex: none; }
+.stage { padding: clamp(14px, 2.8dvh, 24px) 16px; margin-top: 0; }
+.disc { width: clamp(82px, 19dvh, 116px); height: clamp(82px, 19dvh, 116px); margin-bottom: 10px; }
+.disc.sm { width: 76px; height: 76px; margin-bottom: 4px; }
+h2 { font-size: clamp(20px, 5.5vw, 24px); margin: 8px 0 3px; }
+.stage p { font-size: 12px; }
+.k { margin: 8px 0 5px; font-size: 12px; }
+.box { min-height: 62px; padding: 10px 8px; font-size: clamp(27px, 8vw, 36px); }
+.dial { width: min(58vw, 230px); height: min(58vw, 230px); margin: 4px auto; flex: none; }
+.dial b { font-size: clamp(42px, 12vw, 54px); }
+.st { margin-top: 2px; }
+.stats { gap: 8px; }
+.stats div { padding: 10px 4px; border-radius: 18px; }
+.stats b { font-size: 23px; }
+.li { padding: 8px 10px; margin-bottom: 7px; border-radius: 18px; }
+.md { overflow-y: auto; align-items: flex-end; }
+@media (max-height: 680px) {
+  #app { padding-top: max(7px, env(safe-area-inset-top, 0px)); padding-bottom: max(7px, env(safe-area-inset-bottom, 0px)); gap: 7px; }
+  .brand .blk { width: 42px; height: 42px; }
+  .brand h1 { font-size: 23px; }
+  .row { padding: 7px 0; }
+  .blk { width: 36px; height: 36px; }
+  .stp button { width: 34px; height: 34px; }
+  .sw { width: 48px; height: 29px; }
+  .sw::after { width: 19px; height: 19px; top: 5px; }
+  .sw.on::after { inset-inline-start: 24px; }
+  .note { padding: 6px 10px; }
+  .btn { padding: 11px; }
+  .dial { width: min(49vw, 190px); height: min(49vw, 190px); }
+  .stage { padding: 12px 12px; }
+  .disc { width: 76px; height: 76px; }
+  .box { min-height: 54px; }
+}
+@media (max-height: 560px) {
+  #app { gap: 5px; }
+  .brand p, .lab { font-size: 10px; }
+  .row { padding: 5px 0; }
+  .note { font-size: 11px; }
+  .dial { width: min(42vw, 160px); height: min(42vw, 160px); }
+  .dial b { font-size: 38px; }
+  .stage { padding: 8px 10px; }
+  .disc { width: 62px; height: 62px; margin-bottom: 5px; }
+  .btn { padding: 9px; font-size: 14px; }
+}
+
 </style>
-<!-- Single-file edition: no external PWA files required. -->\n</head>
+<!-- Single-file edition: no external PWA files required. -->
+</head>
 <body>
 <div id="app"></div>
 <script>
